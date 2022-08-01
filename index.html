@@ -38,15 +38,18 @@ body {
           position:absolute;
           text-align:center;
           width:100%;
-          bottom:300px;
+          bottom:260px;
          padding: 10px 100px;
                     }
           button{
          padding:10px 50px;
          font-size: 15px;
-        letter-spacing: 1px;
-        outline: none;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
+        border-radius:50px;
+        background-color:transparent;
+                border-color:#4384F5;
+        color:#4384F5;
               }
       body {
         margin: 5px;
@@ -176,33 +179,23 @@ body {
     </style>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
+var ratingValue;
       $(function () {
         $('input[type="radio"]').click("change", function (e) {
-          
-        
-              return false;
-        }
-        //             window.parent.postMessage(
-        //     JSON.stringify({
-        //       event_code: "ym-client-event",
-        //       data: JSON.stringify({
-        //         event: {
-        //           code: "rating",
-        //           data: {
-        //             selectedRating: ratingValue,
-        //           },
-        //         },
-        //       }),
-        //     }),
-        //     "*"
-        //   );
-          $('input[type="radio"]').attr("disabled", "disabled");
-        });
-      );
+              ratingValue = $('input[name="rating"]:checked').val();
+             manage(ratingValue)
+        })
+      });
     </script>
     <script>
-        function myFunction(){
-        var ratingValue = $('input[name="rating"]:checked').val();
+         document.getElementById("test").disabled = true;
+    function manage(ratingValue) {
+        if(ratingValue)
+      document.getElementById("test").disabled = false;
+        else
+          document.getElementById("test").disabled = true;
+    }
+    function myFunction(){
         window.parent.postMessage(
             JSON.stringify({
               event_code: "ym-client-event",
@@ -217,15 +210,15 @@ body {
             }),
             "*"
           );
-          alert(ratingValue)
-      }
+          alert(`${ratingValue} saved`);
+    }
     </script>
 </head>
 <body>
 <div class="container">
 <div class="feedback">
  <div class= "btn">
-<button type="submit" onClick=myFunction();>Submit</button>
+<button type="submit" id="test" onclick="myFunction()" disabled>Submit</button>
 </div>
 <div class="rating">
 <div class="star-rating col-sm-10">
@@ -305,23 +298,3 @@ body {
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
