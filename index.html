@@ -35,22 +35,27 @@ body {
         background-size: contain;
       }
              .btn {
-                 display:inline-block;
           position:absolute;
           text-align:center;
-          width:100%;
-          bottom:290px;
-         padding: 10px 100px;
+          left:25%;
+          width:50%;
+          bottom:120px;
+         padding: 10px 10px;
+         letter-spacing:1px;
+         text-transform:uppercase;
+         border-color:#4384F5;
+        color:#4384F5;
+        border-radius:50px;
+        background-color:transparent;
                     }
           button{
          padding:5px 20px;
-         font-size: 9px;
+         font-size: px;
         letter-spacing: 1px;
         text-transform: uppercase;
-        border-radius:50px;
+        
         background-color:transparent;
-                border-color:#4384F5;
-        color:#4384F5;
+                
               }
       body {
         margin: 2px;
@@ -219,7 +224,8 @@ var ratingValue;
 <div class="container">
 <div class="feedback">
  <div class= "btn">
-<button type="submit" id="test" onclick="myFunction()" disabled>Submit</button>
+<input type="button" value="Submit"id="Submit-button" onclick="myFunction()" disabled  class=btn "btn-primary center">
+
 </div>
 <div class="rating">
 <div class="star-rating col-sm-10">
@@ -277,7 +283,6 @@ var ratingValue;
 </div>
 </div>
 </div>
-   
 <script>
     for (let index = 1; index <= 5; index++) {
         $(function () {
@@ -300,4 +305,3 @@ var ratingValue;
     </script>
 </body>
 </html>
-
