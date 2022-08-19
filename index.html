@@ -35,27 +35,22 @@ body {
         background-size: contain;
       }
              .btn {
+                 display:inline-block;
           position:absolute;
           text-align:center;
-                 left:15%
-          width:40%;
-          bottom:140px;
-         padding: 10px 20px;
-         letter-spacing:1px;
-         text-transform:uppercase;
-         border-color:#4384F5;
-        color:#4384F5;
-        border-radius:50px;
-        background-color:transparent;
+          width:100%;
+          bottom:290px;
+         padding: 10px 100px;
                     }
           button{
          padding:5px 20px;
-         font-size: px;
+         font-size: 9px;
         letter-spacing: 1px;
         text-transform: uppercase;
-        
+        border-radius:50px;
         background-color:transparent;
-                
+                border-color:#4384F5;
+        color:#4384F5;
               }
       body {
         margin: 2px;
@@ -224,8 +219,7 @@ var ratingValue;
 <div class="container">
 <div class="feedback">
  <div class= "btn">
-<input type="button" value="Submit"id="Submit-button" onclick="myFunction()"   class=btn "btn-primary center">
-
+<button type="submit" id="test" onclick="myFunction()" disabled>Submit</button>
 </div>
 <div class="rating">
 <div class="star-rating col-sm-10">
@@ -305,3 +299,7 @@ var ratingValue;
     </script>
 </body>
 </html>
+
+
+
+
